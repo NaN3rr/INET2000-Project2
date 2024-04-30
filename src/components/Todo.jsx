@@ -1,4 +1,8 @@
 import { useEffect, useRef, useState } from "react";
+import { FiEdit3 } from "react-icons/fi";
+import { FiTrash2 } from "react-icons/fi";
+import { FiSave } from "react-icons/fi";
+import { FiXCircle } from "react-icons/fi";
 
 function usePrevious(value) {
     const ref = useRef();
@@ -45,11 +49,11 @@ function Todo(props) {
                     type="button"
                     className="btn todo-cancel"
                     onClick={() => setEditing(false)}>
-                    Cancel
+                    <FiXCircle />
                     <span className="visually-hidden">renaming {props.name}</span>
                 </button>
                 <button type="submit" className="btn btn__primary todo-edit">
-                    Save
+                    <FiSave />
                     <span className="visually-hidden">new name for {props.name}</span>
                 </button>
             </div>
@@ -75,13 +79,13 @@ function Todo(props) {
                     className="btn"
                     onClick={() => { setEditing(true); }}
                     ref={editButtonRef} >
-                    Edit <span className="visually-hidden">{props.name}</span>
+                    <FiEdit3 /><span className="visually-hidden">{props.name}</span>
                 </button>
                 <button
                     type="button"
                     className="btn btn__danger"
                     onClick={() => props.deleteTask(props.id)}>
-                    Delete <span className="visually-hidden">{props.name}</span>
+                    <FiTrash2 /> <span className="visually-hidden">{props.name}</span>
                 </button>
             </div>
         </div>

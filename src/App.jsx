@@ -3,6 +3,7 @@ import { nanoid } from "nanoid";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
+import { FiSmile } from "react-icons/fi";
 
 function usePrevious(value) {
   const ref = useRef();
@@ -94,7 +95,7 @@ function App(props) {
 
   return (
     <div className="todoapp stack-large">
-      <h1>TodoMatic</h1>
+      <h1><FiSmile /> TodoMatic <FiSmile /></h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">
         {filterList}

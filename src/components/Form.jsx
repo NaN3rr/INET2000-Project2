@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FiPlus } from "react-icons/fi";
 
 function Form(props) {
     const [name, setName] = useState("");
@@ -30,7 +31,7 @@ function Form(props) {
                 onChange={handleChange}
             />
             <button type="submit" className="btn btn__primary btn__lg">
-                Add
+                <FiPlus />
             </button>
         </form>
     );
